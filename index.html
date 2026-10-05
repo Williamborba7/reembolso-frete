@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação de Reembolso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Reembolso de Despesas</h1>
+            <p>Preencha os dados e anexe o comprovante.</p>
+        </header>
+
+        <form id="form-reembolso">
+            <div class="form-group">
+                <label for="motorista">1. Nome do motorista</label>
+                <input type="text" id="motorista" required placeholder="Ex: João da Silva">
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">2. Telefone (WhatsApp)</label>
+                <!-- maxlength="15" limita a (00) 00000-0000 -->
+                <input type="tel" id="telefone" required maxlength="15" placeholder="(00) 00000-0000">
+            </div>
+
+            <div class="form-group">
+                <label for="cnpj">3. CNPJ do cliente</label>
+                <!-- maxlength="18" limita a 00.000.000/0000-00 -->
+                <input type="text" id="cnpj" required maxlength="18" placeholder="00.000.000/0000-00">
+            </div>
+
+            <div class="form-group">
+                <label for="cliente">4. Nome do cliente</label>
+                <input type="text" id="cliente" required>
+            </div>
+
+            <div class="form-group">
+                <label for="placa">5. Placa do veículo</label>
+                <!-- maxlength="8" limita a ABC-1234 (padrão antigo ou Mercosul) -->
+                <input type="text" id="placa" required maxlength="8" placeholder="ABC-1234">
+            </div>
+
+            <div class="form-group">
+                <label for="nf">6. Número da nota fiscal</label>
+                <input type="text" id="nf" required maxlength="6">
+            </div>
+
+            <div class="form-group">
+                <label for="dt">7. Número da DT</label>
+                <input type="text" id="dt" required maxlength="8">
+            </div>
+
+            <div class="form-group">
+                <label for="paletes">8. Quantidade de paletes</label>
+                <input type="number" id="paletes" required>
+            </div>
+
+            <div class="form-group">
+                <label for="valor">9. Valor da despesa (R$)</label>
+                <!-- Mudamos type="number" para type="text" e adicionamos inputmode="numeric" -->
+                <input type="text" id="valor" inputmode="numeric" required placeholder="0,00">
+            </div>
+
+            <div class="form-group">
+                <label for="tipoPix">10. Tipo de chave Pix</label>
+                <select id="tipoPix" required>
+                    <option value="">Selecione...</option>
+                    <option value="cpf_cnpj">CPF / CNPJ</option>
+                    <option value="celular">Celular</option>
+                    <option value="email">E-mail</option>
+                    <option value="aleatoria">Chave Aleatória</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="chavePix">11. Chave Pix</label>
+                <input type="text" id="chavePix" required>
+            </div>
+
+            <div class="form-group">
+                <label for="comprovante">Anexar Foto do Comprovante</label>
+                <input type="file" id="comprovante" accept="image/*" required>
+            </div>
+
+            <button type="submit">Enviar Solicitação</button>
+        </form>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
